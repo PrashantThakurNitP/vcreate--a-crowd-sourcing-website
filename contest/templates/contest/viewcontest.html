@@ -1,0 +1,369 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    .topnav {
+      overflow: hidden;
+      background-color: #e9e9e9;
+    }
+
+    .logo {
+      float: left;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .topnav .login-container {
+      float: right;
+    }
+
+    .topnav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+      width: 150px;
+    }
+
+    .topnav .login-container button {
+      float: right;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 10px;
+      background-color: #555;
+      color: white;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .topnav .login-container button:hover {
+      background-color: green;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav .login-container {
+        float: none;
+      }
+
+      .topnav a,
+      .topnav input[type=text],
+      .topnav .login-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+      }
+
+      .topnav input[type=text] {
+        border: 1px solid #ccc;
+      }
+    }
+
+    .pull-left {
+      text-align: left;
+    }
+
+    .con {
+      overflow: hidden;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+
+  <div class="topnav">
+    <div class="logo">
+      <img src="{% static 'images/vcreate_logo.png' %}"  alt="Cinque Terre" width="150" height="44">
+    </div>
+   <a class="active" href="{% url 'index' %}"><b>Home</b></a>
+    <a href="{% url 'about' %}"><b>About</b></a>
+    <a href="{% url 'comp' %}"><b>Contest</b></a>
+    <a href="{% url 'community' %}"><b>Community</b></a>
+
+  </div>
+
+
+  <div class="con">
+
+
+
+    <link rel="stylesheet" media="all" href="https://assets.eyeka.com/assets/application-a6e500957edf81c836f93d2493a2038b.css" />
+    <meta href='/manifest.json' rel='manifest'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin,latin-ext,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Poppins:400,700&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
+
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <title ng-non-bindable>
+      Summary | Future of Smartphone in 2025 – Design a future smartphone that changes our lives again, in 2025 -
+      eÿeka
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://assets.eyeka.com/assets/eyeka/picto-B-circle-small-ab444f8bdcafcd5a6f84531c0222c2b2.png" />
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="gqDvZIHwCdWx+cMpZXoZUTZ8mAotTAhnDLNDlFczaORrHbnkGvQzEEdCjXgJAz+/GfFmEGuOb+RskQ8BNPs4AA==" />
+    <link href='https://assets.eyeka.com/assets/eyeka/picto-B-circle-small-144x144-5d07286fef7d8479ba993c4ea02c7314.png' rel='apple-touch-icon-precomposed' sizes='144x144'>
+    <link href='https://assets.eyeka.com/assets/eyeka/picto-B-circle-small-120x120-f6c42f7e390b4ec559aee82f3429f45e.png' rel='apple-touch-icon-precomposed' sizes='120x120'>
+    <link href='https://assets.eyeka.com/assets/eyeka/picto-B-circle-small-144x144-5d07286fef7d8479ba993c4ea02c7314.png' rel='apple-touch-icon-precomposed' sizes='114x114'>
+    <link href='https://assets.eyeka.com/assets/eyeka/picto-B-circle-small-72x72-da1a56f270407d8c27933a9afcd2e656.png' rel='apple-touch-icon-precomposed' sizes='72x72'>
+    <link href='https://assets.eyeka.com/assets/eyeka/picto-B-circle-small-144x144-5d07286fef7d8479ba993c4ea02c7314.png' rel='apple-touch-icon-precomposed'>
+    <link href='/opensearch.xml' rel='search' title='eÿeka' type='application/opensearchdescription+xml'>
+    <meta content='Design a future smartphone that changes our lives again, in 2025 €7,000. Illustration and Creative Writing.' name='description'>
+    <meta content='https://s3-ie.eyeka.com/ASSETS/700x490/a83a7cd2cd044300b8a755ffebaa44e8.jpg' property='og:image'>
+    <meta content='eÿeka' property='og:site_name'>
+    <meta content='on' http-equiv='cleartype'>
+    <meta content='eÿeka' name='application-name'>
+    <meta content='/browserconfig' name='msapplication-config'>
+    <link rel="alternate" type="application/atom+xml" title="All Contests" href="/contests.atom" />
+    <!--[lt IE 9]>
+  <script>
+    document.createElement('video');
+    document.createElement('audio');
+  </script>
+  <![endif]-->
+    <link rel="stylesheet" media="screen" href="https://en.eyeka.com/contests/12077-future-of-smartphone-in-2025.css" />
+    <meta content='Future of Smartphone in 2025 - Design a future smartphone that changes our lives again, in 2025 - eÿeka' property='og:title'>
+    <meta content='Design a future smartphone that changes our lives again, in 2025 - Illustration, Creative Writing - Contest Ended - €7,000' property='og:description'>
+    <meta content='auto' property='og:determiner'>
+    <meta content='https://en.eyeka.com/contests/12077-future-of-smartphone-in-2025' property='og:url'>
+    <link href='https://en.eyeka.com/contests/12077-future-of-smartphone-in-2025/summary' rel='canonical'>
+
+
+
+
+    <div id='wrapper'>
+      <div id='applicationcontainer'>
+        <div class='container-fluid' id='maincontainer'>
+          <div class='row-fluid'>
+
+
+
+            <br>
+            <!-- CFE Cover -->
+            <div class='hero hidden-print'>
+              <div class='gradient'>
+                <div class='inner'>
+                  <h1>
+                    <span>
+                      Future of Smartphone in 2025
+                    </span>
+                    <br>
+
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <!-- CFE Navigation -->
+
+
+            <!-- CFE CONTENT -->
+            <div class='container-fluid' id='innercontainer'>
+              <div id='summary'>
+                <!-- brief content -->
+                <span content='https://s3-ie.eyeka.com/JPG/400/bfaa8442520e46858698b2bdba58d555.jpg'>
+                  <div class='inner'>
+                    <h2 class='text-center'>Design a future smartphone that changes our lives again, in 2025</h2>
+                    <div class='row-fluid'>
+                      <div class='span8 contest-highlights'>
+                        <div class='contest-prize'>
+                          <div class='inner'>
+                            INR 75,000<span class="local-currency" data-number="7500" prefix="approx. "></span>
+                          </div>
+                        </div>
+                        <div class='contest-prize-ab hidden'>
+                          <div class='prize-group clearfix' id='jurys_prize'>
+                            <h4>
+                              Jury&#39;s Prize
+                            </h4>
+                            <ul class='clearfix prize-list'>
+                              <li class='prize'>
+                                <span class='prize-rank'>#1</span>
+                                <small>Prize</small>
+                                <span class='prize-label'><strong>&euro;2,800<span class="local-currency" data-number="2800" prefix="approx. "></span></strong></span>
+                              </li>
+                              <li class='prize'>
+                                <span class='prize-rank'>#2</span>
+                                <small>Prize</small>
+                                <span class='prize-label'><strong>&euro;1,800<span class="local-currency" data-number="1800" prefix="approx. "></span></strong></span>
+                              </li>
+                              <li class='prize'>
+                                <span class='prize-rank'>#3</span>
+                                <small>Prize</small>
+                                <span class='prize-label'><strong>&euro;1,200<span class="local-currency" data-number="1200" prefix="approx. "></span></strong></span>
+                              </li>
+                              <li class='prize'>
+                                <span class='prize-rank'>#4</span>
+                                <small>Prize</small>
+                                <span class='prize-label'><strong>&euro;800<span class="local-currency" data-number="800" prefix="approx. "></span></strong></span>
+                              </li>
+                              <li class='prize'>
+                                <span class='prize-rank'>#5</span>
+                                <small>Prize</small>
+                                <span class='prize-label'><strong>&euro;400<span class="local-currency" data-number="400" prefix="approx. "></span></strong></span>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
+                        <div class='contest-timing'>
+                          <div class='inner'>
+                            <span content='2020-04-09T17:00:00Z'>
+                              <span content='2020-05-04T15:59:00Z'>
+                                Contest is LIVE
+                              </span>
+                          </div>
+                        </div>
+                        <div class='content-format-ab hidden'>
+                          <p>Present your idea with 2 high quality illustrations, so that we understand what it is and how it could work.</p>
+                        </div>
+                        <div class='content-short-desc-ab hidden'>
+                          Easy submission form
+                        </div>
+                        <div class='contest-medium'>
+                          <div class='inner'>
+                            Illustration - Creative Writing
+                          </div>
+                        </div>
+                      </div>
+                      <div class='span15 offset1'>
+                        <div class='editorial-content'>
+                          <p>When the 1<sup>st</sup> smartphone was invented, it completely changed our lives. Smartphones brought people closer like never before and enabled users to have a better control of their lives through very simple and
+                            intuitive actions. People developed a new pattern of living based on their usage of smartphones. And new jobs and new occupations were born with the birth of smartphones. Smartphones have changed the world.</p>
+                          <p>As time has gone by, we have seen many revolutions and evolutions in the category that has continued to bring us surprises and excitement. Nowadays, people’s lives have been seamlessly connected with smartphones, and many
+                            of us cannot live without them. Instead of waiting for the big brands or telecom tycoons to decide what the next invention will be, why don't you show us your vision for the future of smartphones?</p>
+                          <p>Our client is one of the leading smartphone manufacturers, with more than 200 million users around the globe, boasting a number of innovations that have improved smartphones over recent decades. Looking forward to the
+                            next
+                            5 years, they want to imagine how technology and hardware will evolve. We need your creativity to envision people’s needs and how smartphones will address them. <strong>Can you help?</strong></p>
+                            <p>Please make all the submissions in <strong>.pdf </strong>format only. Please mention your <strong>Name </strong>and <strong>Email Id </strong>in the bottom of the file for verification purpose.</p>
+
+                        </div>
+                        <div class='editorial-content-ab hidden'>
+                          Design a future smartphone that changes our lives again, in 2025
+                        </div>
+
+                        <div id="filesubmit">
+                          <p><strong>👇 Please submit your entries here.</strong></p>
+                          <label>
+                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Agree to <a title="Terms of Use " href="tou.html">Terms of Use</a>
+                          </label>
+                          <input type="file" class="file-select" />
+                          <button class="file-submit">SUBMIT</button>
+                        </div>
+                        <div class="">
+
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-storage.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+
+  <script type="module" >
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyD9dFFUIdMBx-7hhzbU1jkZITt0-xkMplM",
+      authDomain: "vcreate-a7cf6.firebaseapp.com",
+      databaseURL: "https://vcreate-a7cf6.firebaseio.com",
+      projectId: "vcreate-a7cf6",
+      storageBucket: "vcreate-a7cf6.appspot.com",
+      messagingSenderId: "838416202066",
+      appId: "1:838416202066:web:5554370c863996e63f228b"
+    };
+
+
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var storageRef = firebase.storage().ref();
+    document.querySelector(".file-select").addEventListener('change', handleFileUploadChange);
+    document.querySelector(".file-submit").addEventListener('click', handleFileUploadSubmit);
+    let selectedFile;
+    function handleFileUploadChange(e) {
+      selectedFile = e.target.files[0];
+    }
+    function handleFileUploadSubmit(e) {
+      var uploadTask = storageRef.child('images/${smartphone.entry}').put(selectedFile); //create a child directory called images, and place the file inside this directory
+      uploadTask.on('state_changed', (snapshot) => {
+      // Observe state change events such as progress, pause, and resume
+      }, (error) => {
+        // Handle unsuccessful uploads
+        console.log(error);
+      }, () => {
+         // Do something once upload is complete
+         console.log('success');
+      });
+    }
+
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>

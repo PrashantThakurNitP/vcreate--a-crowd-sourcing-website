@@ -1,0 +1,107 @@
+{% extends 'contest/base.html' %}
+
+{% block content %}
+
+
+
+<style type="text/css">
+      #a1{
+font-family: 'Permanent Marker', cursive;
+font-family: 'Fredoka One', cursive;
+font-family: 'Pacifico', cursive;
+}
+#b1
+{
+      font-family: 'Permanent Marker', cursive;
+font-family: 'Fredoka One', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Great Vibes', cursive;
+}
+
+body {
+ /* background-image: url('https://cdn.dribbble.com/users/722246/screenshots/11096994/media/abcf2fe91c135bbaec19a3816dd0a992.gif');*/
+ background-color:#f8f8f8;
+  background-repeat: repeat-y;
+  background-size: 100vw 100vh;
+  margin-top: 0vw;
+}
+#i1
+{
+    margin-left:10vw;
+    width :50vw;
+     color:white;
+    background-color:black;
+
+}
+#i2
+{
+    margin-left:10vw;
+    width :50vw;
+    color:blue;
+    background-color:white;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  #i2:hover
+{
+ /* background-color: blue;*/
+
+   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19);
+
+}
+@media only screen and (max-width: 800px)
+{
+
+    #i2
+{
+    margin-left:8vw;
+    width :76vw;
+       word-wrap: break-word;
+       font-size:0.2em;
+       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+}
+
+@media only screen and (max-width: 800px)
+{
+
+    #i1
+{
+    margin-left:8vw;
+    width :76vw;
+     font-size:0.5em;
+}
+#i4
+{
+    font-size:2em;
+}
+}
+</style>
+<div class="container text-center">
+<h1 id="i1" class="alert alert-success">VERIFY YOUR ALL SUBMISSION</h1>
+
+  {% for contest in allsubmission %}
+      <div id ="i2" class="jumbotron text-center">
+
+  <h4 id="i4"> Contest : {{contest.contest}}</h4><!-- way to highlight if impotant -->
+        <p>Organised by : {{contest.contest.organisedby.first_name}}&nbsp {{contest.contest.organisedby.last_name}}</p>
+      
+      <div class="columns download">
+          <p>
+             <a href="{{contest.document.url}}" class="button"><i class="fa fa-download"></i>Download Submission</a>
+          </p>
+       </div>
+     
+
+      </div>
+
+  {% endfor %}
+
+
+</div>
+{% endblock %}
+
+
+
+
+

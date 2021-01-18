@@ -1,0 +1,607 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    .topnav {
+      overflow: hidden;
+      background-color: #e9e9e9;
+    }
+
+    .logo {
+      float: left;
+    }
+
+    .topnav a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .topnav .login-container {
+      float: right;
+    }
+
+    .topnav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+      width: 150px;
+    }
+
+    .topnav .login-container button {
+      float: right;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 10px;
+      background-color: #555;
+      color: white;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .topnav .login-container button:hover {
+      background-color: green;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav .login-container {
+        float: none;
+      }
+
+      .topnav a,
+      .topnav input[type=text],
+      .topnav .login-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+      }
+
+      .topnav input[type=text] {
+        border: 1px solid #ccc;
+      }
+    }
+
+
+    /* Button used to open the contact form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #b83b5e;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 33px;
+      right: 38px;
+      width: 360px;
+    }
+
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: white;
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+
+    .form-container {
+      opacity: 0.9;
+      background-color: white;
+    }
+
+    .live.compi {
+      position: absolute;
+      left: 100px;
+
+    }
+
+    .past.compo {
+      position: relative;
+      left: 100px;
+
+    }
+
+    .live.title1 {
+      position: absolute;
+      left: 55px;
+    }
+
+    .past.title2 {
+      position: relative;
+      left: 55px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="topnav">
+    <div class="logo">
+      <img src="{% static 'images/vcreate_logo.png' %}" alt="Cinque Terre" width="150" height="44">
+    </div>
+     <a class="active" href="{% url 'index' %}"><b>Home</b></a>
+    <a href="{% url 'about' %}"><b>About</b></a>
+    <a href="{% url 'comp' %}"><b>Contest</b></a>
+    <a href="{% url 'community' %}"><b>Community</b></a>
+
+
+  </div>
+
+
+
+
+
+
+  <button class="open-button" onclick="openForm()"><b>Get Yourself Registered</b></button>
+
+  <div class="form-popup" id="myForm">
+    <form action="index.html" class="form-container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+
+      <b>Register as :</b>
+      <input type="radio" class="radio" name="type" value="brand" id="brand" />
+      <label for="brand">Brand</label>
+      <input type="radio" class="radio" name="type" value="individual" id="Individual" />
+      <label for="individual">Individual</label><br><br>
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Your Full Name" name="name" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Your Email Id" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <button type="submit" class="btn">Register</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+  <div class="live">
+
+
+
+    <div class="title1">
+      <h1 class='contests-title' data-flip-all-target='past'>
+        <span>Live Contests</span>
+    </div>
+    <div class='compi'>
+      <table style="width:100%" cellspacing="55">
+        <tr>
+          <td>
+
+
+
+
+
+
+            <div class='contests-wrapper'>
+
+            </div>
+ <a href="{% url 'checkallcontest' %}"><b>Check all contest</b></a>
+ <a href="{% url 'organisecontest' %}"><b>Organise a contest</b></a>
+            <article class='cfe-card past'>
+              <div class='card'>
+                <div class='face'>
+                  <div class='card-hat'>
+                    <div class='progress-vertical' color='#00839B' progression='0.8888888888888888' style='float:left'>
+                      <span content='2020-04-09T17:00:00Z'>
+                        <span content='2020-05-04T15:59:00Z'>
+                    </div>
+                    <div class='flipper-handle' title='See more info'></div>
+                    <div class='inner'>
+                      <h3><a title="Future of Smartphone in 2025" href="smartphone.html"><span>Future of Smartphone in 2025</span></a></h3>
+                      <p>
+                        <span>INR 75,000<span class="local-currency" data-number="7500" prefix="approx. "></span></span>
+                        <span title='Creative Writing - Illustration'>Creative Writing - Illustration</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class='card-content clearfix'>
+                    <div class='recto'>
+                      <div class='banners'>
+                      </div>
+                      <a title="Future of Smartphone in 2025" href="smartphone.html"><img alt="Future of Smartphone in 2025" src="https://s3-ie.eyeka.com/JPG/400/bfaa8442520e46858698b2bdba58d555.jpg" /></a>
+                    </div>
+                    <div class='verso'>
+                      <div class='inner clearfix'>
+                        <div class='info-counter'>
+                          612<span>Challengers</span>
+                        </div>
+                        <div class='info-counter'>
+                          145<span>Participants</span>
+                        </div>
+                        <div class='info-counter'>
+                          266<span>Medias submitted</span>
+                        </div>
+                        <div class='info-counter'>
+                          113<span>Medias accepted</span>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class='footer-message'>
+                      <div class='contest-status'>
+                        Results were announced on July 23, 2020</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+  <div class="past">
+
+
+
+
+    <div class="title2">
+      <h1 class='contests-title' data-flip-all-target='past'>
+        <span>Past Contests</span>
+    </div>
+
+
+    <div class='compo'>
+      <table style="width:100%" cellspacing="55">
+        <tr>
+          <td>
+
+            <div class='contests-wrapper'>
+
+
+            </div>
+
+                <article class='cfe-card past'>
+                  <div class='card'>
+                    <div class='face'>
+                      <div class='card-hat'>
+                        <div class='progress-vertical' color='#00839B' progression='0.5555555555555556' style='float:left'>
+                          <span content='2020-09-08T10:00:00Z'>
+                            <span content='2020-09-29T05:59:00Z'>
+                        </div>
+                        <div class='flipper-handle' title='See more info'></div>
+                        <div class='inner'>
+                          <h3><a title="Nasal Health: Science storytelling" href="nasal.html"><span>Nasal Health: Science storytelling</span></a></h3>
+                          <p>
+                            <span>INR 83,000<span class="local-currency" data-number="8300" prefix="approx. "></span></span>
+                            <span title='Creative Writing - Illustration'>Creative Writing - Illustration</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div class='card-content clearfix'>
+                        <div class='recto'>
+                          <div class='banners'>
+                          </div>
+                          <a title="Nasal Health: Science storytelling" href="nasal.html"><img alt="Nasal Health: Science storytelling"
+                              src="https://s3-ie.eyeka.com/JPG/400/2ec0fd996b334c118be3408612b8d206.jpg" /></a>
+                        </div>
+                        <div class='verso'>
+                          <div class='inner clearfix'>
+                            <div class='info-counter'>
+                              785<span>Challengers</span>
+                            </div>
+                            <div class='info-counter'>
+                              199<span>Participants</span>
+                            </div>
+                            <div class='info-counter'>
+                              392<span>Medias submitted</span>
+                            </div>
+                            <div class='info-counter'>
+                              127<span>Medias accepted</span>
+                            </div>
+                            <div class='cta'>
+                              <a class="btn btn-primary" href="nasal.html">Access the Brief</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='footer-message'>
+                          <div class='contest-status'>
+                            Contest ended on September 29, 2020</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+          </td>
+          <td>
+
+
+            <article class='cfe-card past'>
+              <div class='card'>
+                <div class='face'>
+                  <div class='card-hat'>
+                    <div class='progress-vertical' color='#00839B' progression='0.8888888888888888' style='float:left'>
+                      <span content='2020-08-27T08:00:00Z'>
+                        <span content='2020-09-08T23:59:00Z'>
+                    </div>
+                    <div class='flipper-handle' title='See more info'></div>
+                    <div class='inner'>
+                      <h3><a title="LG: Wearable Air purifier" href="mask.html"><span>LG: Wearable Air purifier</span></a></h3>
+                      <p>
+                        <span>INR 25,000<span class="local-currency" data-number="2500" prefix="approx. "></span></span>
+                        <span title='Creative Writing - Illustration'>Creative Writing - Illustration</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class='card-content clearfix'>
+                    <div class='recto'>
+                      <div class='banners'>
+                        <span class='highlight-banner'>
+                        </span>
+                      </div>
+                      <a title="LG: Wearable Air purifier" href="mask.html"><img alt="LG: Wearable Air purifier"  src="https://s3-ie.eyeka.com/JPG/400/aa7d609724f143a3ab58a095945c95ea.jpg" /></a>
+                    </div>
+                    <div class='verso'>
+                      <div class='inner clearfix'>
+                        <div class='info-counter'>
+                          438<span>Challengers</span>
+                        </div>
+                        <div class='info-counter'>
+                          123<span>Participants</span>
+                        </div>
+                        <div class='info-counter'>
+                          216<span>Medias submitted</span>
+                        </div>
+                        <div class='info-counter'>
+                          126<span>Medias accepted</span>
+                        </div>
+                        <div class='cta'>
+                          <a class="btn btn-primary" href="maskr.html">View Results</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='footer-message'>
+                      <div class='contest-status'>
+                        Results were announced on October 20, 2020</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+
+          </td>
+          <td>
+
+
+            <article class='cfe-card past'>
+              <div class='card'>
+                <div class='face'>
+                  <div class='card-hat'>
+                    <div class='progress-vertical' color='#00839B' progression='0.8888888888888888' style='float:left'>
+                      <span content='2020-07-09T11:00:00Z'>
+                        <span content='2020-07-26T23:59:00Z'>
+                    </div>
+                    <div class='flipper-handle' title='See more info'></div>
+                    <div class='inner'>
+                      <h3><a title="Hellmann’s Solutions for Chefs" href="mayo.html"><span>Hellmann’s Solutions for Chefs</span></a></h3>
+                      <p>
+                        <span>INR 35,000<span class="local-currency" data-number="2500" prefix="approx. "></span></span>
+                        <span title='Creative Writing - Illustration'>Creative Writing - Illustration</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class='card-content clearfix'>
+                    <div class='recto'>
+                      <div class='banners'>
+                        <span class='highlight-banner'>
+                        </span>
+                      </div>
+                      <a title="Hellmann’s Solutions for Chefs" href="mayo.html"><img alt="Hellmann’s Solutions for Chefs" src="https://s3-ie.eyeka.com/JPG/400/89a482278be546b5860f5c950d5d1985.jpg" /></a>
+                    </div>
+                    <div class='verso'>
+                      <div class='inner clearfix'>
+                        <div class='info-counter'>
+                          469<span>Challengers</span>
+                        </div>
+                        <div class='info-counter'>
+                          52<span>Participants</span>
+                        </div>
+                        <div class='info-counter'>
+                          99<span>Medias submitted</span>
+                        </div>
+                        <div class='info-counter'>
+                          64<span>Medias accepted</span>
+                        </div>
+                        <div class='cta'>
+                          <a class="btn btn-primary" href="mayo.html">Access the Brief</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='footer-message'>
+                      <div class='contest-status'>
+                        Contest ended on July 26, 2020</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </td>
+        </tr>
+        <br>
+        <tr>
+          <td>
+            <article class='cfe-card past'>
+              <div class='card'>
+                <div class='face'>
+                  <div class='card-hat'>
+                    <div class='progress-vertical' color='#00839B' progression='0.8888888888888888' style='float:left'>
+                      <span content='2020-04-15T19:00:00Z'>
+                        <span content='2020-04-28T11:59:00Z'>
+                    </div>
+                    <div class='flipper-handle' title='See more info'></div>
+                    <div class='inner'>
+                      <h3><a title="A post Covid-19 world" href="covid.html"><span>A post Covid-19 world</span></a></h3>
+                      <p>
+                        <span>INR 10,000<span class="local-currency" data-number="1000" prefix="approx. "></span></span>
+                        <span title='Creative Writing - Illustration'>Creative Writing - Illustration</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class='card-content clearfix'>
+                    <div class='recto'>
+                      <div class='banners'>
+                        <span class='highlight-banner'>
+                          <i class="icon-bolt"></i>Flash</span>
+                      </div>
+                      <a title="A post Covid-19 world" href="covid.html"><img alt="A post Covid-19 world" src="https://s3-ie.eyeka.com/JPG/400/701ba1b76f874b3085b91a4dbac8adf4.jpg" /></a>
+                    </div>
+                    <div class='verso'>
+                      <div class='inner clearfix'>
+                        <div class='info-counter'>
+                          395<span>Challengers</span>
+                        </div>
+                        <div class='info-counter'>
+                          77<span>Participants</span>
+                        </div>
+                        <div class='info-counter'>
+                          196<span>Medias submitted</span>
+                        </div>
+                        <div class='info-counter'>
+                          142<span>Medias accepted</span>
+                        </div>
+                        <div class='cta'>
+                          <a class="btn btn-primary" href="covid.html">Access the Brief</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='footer-message'>
+                      <div class='contest-status'>
+                        Contest ended on May 07, 2020</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+
+          </td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
+  <div class="dec">
+    <p><strong>All the competitions hosted on this site are for demonstration purpose only. vcreate doesnot claim any Intellectual Property Rights over the hosted competitions neither intend to violate any rules.</strong></p>
+
+  </div>
+
+
+</body>
+
+</html>

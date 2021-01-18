@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+
+{% extends 'contest/login_base.html' %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+<title>fricle|login social media site</title>
+<meta name="google-site-verification" content="3ei0cSPDpuoPylmV4qMzyhvrNb79oxeL8jWHUSqAVe4" />
+
+<meta name="Description" content="Fricle - Your friend circle| Social media site , a place for people to meet and mingle. Share your posts. Read news from top news site like bbc , india today, cnn. Send personal messages, Update your profile and maintain your todo list privately.
+This website is handcrafted in India .Its very easy. Try it now!">
+<meta name="google-site-verification" content="3ei0cSPDpuoPylmV4qMzyhvrNb79oxeL8jWHUSqAVe4" />
+<script data-ad-client="ca-pub-6314729004199096" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta name="keywords" content="fricle your friend circle| social media site| posts| feeds| news |Prashant thakur " />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+{% if error %}
+<script type="text/javascript">
+  alert('{{error}}')
+</script>
+   {% endif %}
+
+<style type="text/css">
+
+.f{
+  color:blue;
+}
+.g{
+  color:red;
+}
+
+ .d1{
+     margin-left:12vw;
+     margin-right:12vw;
+     margin-top:5vh;
+    display: flex;
+
+    align-items: flex-start;
+
+    align-content: center;
+     flex-wrap: wrap;
+
+        width:72vw;
+        height:90vh;
+     background-color:white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+  }
+
+
+
+.d
+  {
+    display: flex
+      align-self: center;
+
+         margin-left: auto;
+          margin-right: auto;
+          flex-wrap:wrap;
+          flex-flow:row;
+
+  }
+
+body {
+   /* background-color: #38A1F3;*/
+  background-image: url('https://lh3.googleusercontent.com/BnDj647Dul_p1CGJViZazlGYK2eF0Ax83sLw3TIatg5pUZV39IB96uPkmrifS-YSxFssQFkB7e39yja0RQaW2dUTchbVnZPAn-rro6wMo_ZIF1Z80LeABMVGaNAc9C9nW3rIsR9GY8zpQvO0uunTVz2EmGO31D7Ya8kQQifaqZKPp7O5EvPOwHb0j4kFl87cAppW7WBDVEwejb7ZvWJwdnrEoKZP5VHBkCERc38cVpw4jO3ubcTGKO_EqZ6YtY-QRzxCJZBJFw03ecRFRkcqlM_qQEFt9sGT3TWjyhOH8h1N8M9tJsubPJMyacMwwUUk6FOJvrfZKYz6DKH5LvK0bfFzgR12zXJOL9DQMw_K_UJiq6EAyS0Oco4OxtiJmzP5LnEfm6es6pUneprhgatI5gnxN7R7XU8WWsKmzqF4dB8FZz0Mep26HykMXwNPYiN6VTEQGk2pJHVNgtASik-O4N3I4r6kef-CV1Dfv18DpArN8ef-pptYRER4W_Hlgmwkwgn6iFQYEULeO9eWE2IIcCIhpuMgPlAUyhaxgaYuuscJt1vQ_IiITlHELokoBVfhWs2Wubo3ywi_pkFPz-Cjf4gYrp8pIdADGL4SNHsupTrTi3Yy7Ef9E4z3B__G8xv7bnwjHKAoLCe4qQ-ElrxONiuh2AF6wLNkV5guKxbIcSRMcHttJcfxEf_W5VyxPg=w1801-h930-no?authuser=0');
+  background-repeat: repeat-y;
+  background-size: 100vw 100vh;
+  margin-top: 0vw;
+
+  margin-top: 0vw;
+
+}
+
+#i1{
+    margin-top:6vh;
+   width: 30vw;
+   margin-left: 0vw;
+
+/*
+   border-color:#38A1F3;
+   border-style: solid;
+  border-width: 65px 65px 65px 0px;*/ /* 25px top, 10px right, 4px bottom and 35px left */
+  }
+
+  #image1{
+      margin-top:6vh;
+   width: 30vw;
+   margin-left: 5vw;
+   height:68vh;
+  /*box-shadow: 6px 6px #565656;*/
+/*
+
+   border-color:#38A1F3;
+   border-style: solid;
+  border-width: 65px 0px 65px 65px;*/ /* 25px top, 10px right, 4px bottom and 35px left */
+
+  }
+
+
+   #imgshape
+    {
+        width:30vw;
+        height:68vh;
+    }
+#about1
+{
+    font-size:1em;
+    color:#565656;
+}
+
+
+@media only screen and (max-width: 1400px) {
+#about
+{
+    font-size:0.5em;
+}
+#about1
+{
+    font-size:0.5em;
+}
+
+  .d1{
+     margin-left:10vw;
+     margin-right:12vw;
+     margin-top:1vh;
+    display: flex;
+
+    align-items: flex-start;
+
+    align-content: center;
+     flex-wrap: wrap;
+
+        width:80vw;
+        height:98vh;
+     background-color:white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+  }
+
+
+
+
+
+
+   #image1{
+      margin-top:5vh;
+   width: 34vw;
+   margin-left: 2vw;
+   height:75vh;
+
+
+  }
+
+
+
+  #i1{
+    margin-top:5vh;
+   width: 35vw;
+   margin-left: 0vw;
+
+  }
+
+}
+@media only screen and (max-width: 900px) {
+#about
+{
+    font-size:0.5em;
+}
+#about1
+{
+    font-size:0em;
+}
+ .d1{
+
+
+
+      margin-left:-2vw;
+     margin-right:auto;
+     margin-top:5vw;
+     width:auto;
+     height:auto;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    align-content: center;
+     flex-wrap: wrap;
+
+
+
+  }
+
+
+
+    body {
+   /* background-color: #38A1F3;*/
+  background-image:None;
+
+  background-color:#f8f8f8;
+  background-repeat: repeat-y;
+  background-size: 100vw 100vh;
+  margin-top: 0vw;
+
+  margin-top: 0vw;
+
+}
+
+
+     #image1{
+         margin-top:5vh;
+   width: 0vw;
+   height:0vw;
+   margin-left: 0vw;
+   box-shadow: 0px 0px #565656;
+   border-width: 0px 0px 0px 0px;
+  }
+
+  #i1{
+      margin-top:5vh;
+   width: 85vw;
+   margin-left: 5vw;
+
+
+   border-color:#38A1F3;
+   border-style: solid;
+  border-width: 0px 0px 0px 0px; /* 25px top, 10px right, 4px bottom and 35px left */
+
+  }
+  .g
+  {
+      font-size:0.6em;
+  }
+   .f
+  {
+      font-size:0.6em;
+  }
+
+    #logo
+    {
+        font-size:0.5em;
+    }
+    #imgshape
+    {
+        width:0vw;
+        height:0vw;
+    }
+}
+
+</style>
+
+
+
+<div class="d1">
+
+<div  id ="image1" class="card card-image"
+    style="background-color :white;border-radius:40px;">
+
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+       <div class="carousel-item active">
+           <img  class="d-block w-30"  id="imgshape"  src="https://praxent.com/wp-content/uploads/2019/02/Praxent_3-Experience-Design-Roadblocks-for-New-Product-Development-1024x1024.png" alt="Third slide">
+    </div>
+
+    <div class="carousel-item">
+      <img  class="d-block w-30"  id="imgshape"  src="https://www.ichitect.com/wp-content/uploads/2013/03/crowdsourcing-versus-outsourcing.jpg" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+          <img   class="d-block w-30" id="imgshape" src="https://lh3.googleusercontent.com/pw/ACtC-3cx2liqnKSt43y4_Cenj06M-gdFO8By3TJC2c0Mxqf6Z_qvKBZxM8Wh5xSb1Cp5L6-9acLnKTNT0dtAZBauxOAxQb-S2JNoR3Q_mZGy-HRTJ3fQYgjDHeCg1vczWUQwnLX_yKrg-W-xkYNShAMDdWNx=w573-h953-no?authuser=0" alt="First slide">
+
+    </div>
+
+    <div class="carousel-item">
+
+      <img  class="d-block w-30"  id="imgshape"  src="https://lh3.googleusercontent.com/pw/ACtC-3eMlA-ETMfmzLI7HWbk62Tt8WSIeSCLXWS5NkpT1Vm_h2wuPnDSDAmEC4RckATkbcBijLG0f-258nqqnLqSv7JWHTB-qpTAG0GwZiLAxaJMIqHtSzcpZsqb8V_f2ktNA_TfqOMlMOyuR3C7QsRI6LdrXA=w613-h953-no?authuser=0" alt="Third slide">
+    </div>
+
+
+     <div class="carousel-item">
+      <img  class="d-block w-30"  id="imgshape"  src="https://lh3.googleusercontent.com/pw/ACtC-3dxeDjyFMpXCHwcVFrgUy4ErVjfVgkuCzl1XobHtNhlmwJUSUEYA-KjJz8Un4Js2LFbTyRPTZApHKPaADizrwBjdQFXGs7hKM6vT8_jw1UPjMzPMG9hcOuQBCSooQ3NALbiEaVy0oED9cg8aQHoDFFY=w500-h600-no?authuser=0" alt="Third slide">
+    </div>
+
+<div class="carousel-item">
+      <img   class="d-block w-30" id="imgshape" src="https://lh3.googleusercontent.com/Wzv7T4UulMT-Ck44HqYMtEr2SAi5Kkb3YokPwm3FgYfTqTKStpOUXLewugr9Kc0nXW9Z1MEWzbtppWr4twcdq7jdq0gEOrVypwkD5A47wwxeqD5CX5fTByuzfpSwWfURt_NDYF7NONPQuDUwSkxn3aZel5gs0AKPawN0kI9MJvirFKNoBYdWJut6kazKBl4puDdQ1Pkoa5-MJh8ox1c70gsFmoyock6zlIRqEk60WfExgUUbk7BY9plDchrzxJ2CJ67D2JqUMqqs3aZYkNJ77lUj__z6qG-ArWtX1JqeOGuB4MZMoj2VVSwSCSk4LJb8gQYMTQASpaLR6gQYMnNe3UJQBCGBITH2tO5xXs5ByK0AAJ5R9TJfB1DLuLhb8n7WGwE_xrRXZnLIImXE3NDNwv5olZSqxB1wWTurqf6Z0oHStf9SSQaq5D1KaJaSEg95ujWxP6k_EBCRibk4wq70InHHVdiHN5nJssj7BV9dARLHU8qkQdlpW4HyW9yF_psaTuCbgnyVcxgL1E4FgrZlfgbPIv8XQEr4BjEaULhqUtccaFLBWaQzB9w-R2dDNNMgH0bP2wJ9jdfwyeFpbKYVPzajrpvJCuAEReR_HDugRzEr7TU9ApbNgvoXux25e-7XT8vJthJCQE6mGLKDGzbWIn28x9c53S1GAgr3s0EhpZW2hnHTXn4nIoSUoYYoQg=w555-h953-no?authuser=0" alt="Third slide">
+    </div>
+
+
+
+    <div class="carousel-item">
+      <img  class="d-block w-30"  id="imgshape"  src="https://images.pexels.com/photos/9746/people-mother-family-father.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Third slide">
+    </div>
+ <div class="carousel-item">
+      <img  class="d-block w-30" id="imgshape" src="https://lh3.googleusercontent.com/pw/ACtC-3dxeDjyFMpXCHwcVFrgUy4ErVjfVgkuCzl1XobHtNhlmwJUSUEYA-KjJz8Un4Js2LFbTyRPTZApHKPaADizrwBjdQFXGs7hKM6vT8_jw1UPjMzPMG9hcOuQBCSooQ3NALbiEaVy0oED9cg8aQHoDFFY=w500-h600-no?authuser=0" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img  class="d-block w-30"  id="imgshape"  src="https://images.unsplash.com/photo-1534484374439-6b8cd79be97c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Third slide">
+    </div>
+     <div class="carousel-item">
+      <img  class="d-block w-30" id="imgshape" src="https://images.pexels.com/photos/4236823/pexels-photo-4236823.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Second slide">
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+  </div>
+
+
+ <div class="d">
+
+ <!--Section: Live preview-->
+<section class="form-dark">
+
+  <!--Form without header-->
+
+
+
+
+
+
+
+
+  <div  id ="i1" class="card card-image"
+    style="background-color :white">
+    <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+
+      <!--Header-->
+      <div  class="text-center" style="border-radius:30px;">
+        <h5 class="alert alert-info" class="white-text mb-5 mt-4 font-weight-bold" id="logo"><strong>vcreate - a crowd sourcing website</strong></h5>
+      </div>
+      {% if messages %}
+<div class="alert alert-success alert-dismissible">
+  {% for message in messages %}
+    <p>{{ message }}</p>
+  {% endfor %}
+</div>
+{% endif %}
+
+      <!--Body-->
+    <!--  <div class="md-form">
+        <h5 class="f">username</h5>
+        <label for="Form-email5"><i class="fas fa-user"></i>{{form.username}}</label>
+      </div>  -->
+
+
+
+
+ <form   method="POST">
+    {% csrf_token %}
+
+                                                        <div class="input-group mb-2">
+                                                <div class="input-group-append">
+                <span class="input-group-text">
+
+                                            <i class="fas fa-user"></i>
+                                 </span>
+                                  </div>
+                                           {{form.username}}
+
+
+                                                       </div>
+
+
+
+                                                <div class="input-group mb-2">
+                                <!--   <h5 class="f"> Password</h5> -->
+                                <div class="input-group-append">
+                <span class="input-group-text">
+                          <i class="fas fa-key"></i>
+                                    </span>
+              </div>
+
+                                     {{form.password}}
+
+                                                 </div>
+
+
+
+
+
+
+
+
+
+
+      <!--Grid row-->
+      <div class="row d-flex align-items-center mb-4">
+
+        <!--Grid column-->
+        <div  class="text-center mb-3 col-md-12">
+          <button type="submit" class="btn btn-info btn-block btn-rounded z-depth-1" style="border-radius:30px;">Login</button>
+        </div>
+        <!--Grid column-->
+      </div>
+      </form>
+
+
+
+
+      <!--Grid row-->
+
+
+
+
+
+
+
+      <!--Grid column-->
+      <div  class="col-md-12">
+
+          <br>
+        <p class="font-small white-text d-flex justify-content-end"><h4 class="g">Don't have an account? </h4>
+
+      <div class="row d-flex align-items-center mb-4">
+
+        <!--Grid column-->
+        <div  class="text-center mb-3 col-md-12">
+
+
+           <a href="{% url 'social:begin' 'facebook' %}"  class="btn btn-info  btn-block btn-rounded z-depth-1" style="color: #fff!important">
+              Login with facebook
+              </a>
+
+
+        </div>
+        <!--Grid column-->
+      </div>
+
+ <td>
+
+        <a href="{%url 'signupuser' %}"
+            class="green-text ml-1 font-weight-bold" id="about"> SIGNUP
+        </a>
+</p>
+
+          <nobr>
+       <a href="{%url 'comp' %}" class="green-text ml-1 font-weight-bold" id="about"> SkipLogin</a>
+       &nbsp &nbsp
+        <a href="" target="_blank"class="green-text ml-1 font-weight-bold" id ="about">About vcreate</a>
+        </nobr>
+        </td>
+
+
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+  <!--/Form without header-->
+
+</section>
+<!--Section: Live preview-->
+
+
+
+
+      <!--Grid column-->
+</div>
+</div>
+
+
+
+  <script>
+            /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+    //We start indexing at one because CSRF_token is considered and input field
+     */
+
+    //Query All input fields
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder='Username..';
+
+    form_fields[2].placeholder='Enter password...';
+
+
+
+    for (var field in form_fields){
+      form_fields[field].className += ' form-control'
+    }
+  </script>
+{% endblock %}

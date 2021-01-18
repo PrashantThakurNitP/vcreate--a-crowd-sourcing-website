@@ -1,0 +1,219 @@
+{% load static %}
+
+<style>
+    #p1 {background-color:#3F729B ;
+        color: white;
+        margin-top: 0.5vh;
+    }
+    #p2 {background-color:#1C2331 ;
+      height: 13vh;
+      margin-top: 0.5vh;
+    }
+    #i2
+    {
+        margin-left :1vw;
+        margin-right :1vw;
+
+    }
+    #p3
+    {
+      font-size: 0.9em;
+      margin-top: 0vw;
+      margin-left: 1vh;
+      margin-top: 1vh;
+    }
+  #p4
+  {
+    position: relative;
+    justify-content: end;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .flex-container{
+    display: flex;
+    align-items: center;
+    margin :2vw;
+    align-content: space-between;
+     flex-wrap: wrap;
+  }
+   #p1:hover
+{
+  background-color: #cc0099;
+  text-decoration: none;
+
+}
+
+@media only screen and (max-width: 800px)
+{
+
+   .flex-container{
+    display: flex;
+    align-items: bottom;
+    margin :2vw;
+    align-content: space-between;
+     flex-wrap: wrap;
+  }
+  #i2{
+
+     margin: auto;
+  }
+  #p1
+  {
+    font-size: 0.6em;
+
+
+  }
+  #p2 {
+      justify-content:flex-start;
+    background-color:#1C2331 ;
+      height: 20vh;}
+  #p3
+  {
+    font-size: 0.7em;
+    margin-top: 1.5vh;
+  }
+  #p4
+  {
+    position: relative;
+    justify-content: end;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+}
+</style>
+
+<!--   navbar end  -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>FRICLE</title>
+  </head>
+  <body>
+    <!-- start -->
+
+
+
+
+
+
+
+
+{% if user.is_authenticated %}
+
+
+
+<div id ="p2" class="flex-container"  >
+
+
+
+<ul class="nav " id ="p4">
+      <li class="nav-item">
+        <a class="btn " id="p1"  class="nav-link active" href="{% url 'home' %}">HOME</a>
+      </li>
+
+
+             <h2 class="nav-item"><button type="button" class="btn btn-default" >  </h2>
+      <li class="nav-item">
+        <a id="p1"  class="btn " href="{% url 'feeds' %}">YOUR FEEDS</a>
+      </li>
+
+       <h2 class="nav-item"><button type="button" class="btn btn-default" >  </h2>
+       <li class="nav-item">
+        <a id="p1"  class="btn " href="{% url 'addpost' %}">ADDPOST</a>
+      </li>
+
+ <h2 class="nav-item"> <button type="button" class="btn btn-default" ></h2>
+       <li class="nav-item">
+        <a id="p1"  class="btn " id="a1" href="{% url 'viewmessage' %}">YOUR CHAT</a>
+      </li>
+       <h2 class="nav-item"><button type="button" class="btn btn-default" >  </h2>
+        <li class="nav-item">
+        <a id="p1"  class="btn " id="a1" href="{% url 'sendmessage' %}">SEND MESSAGE</a>
+      </li>
+       <h2 class="nav-item"><button type="button" class="btn btn-default" >  </h2>
+      <li class="nav-item">
+        <a id="p1" class="btn " href="/todo/">TODO</a>
+      </li>
+      <h2 class="nav-item"><button type="button" class="btn btn-default" >  </h2>
+      <li  class="nav-item">
+
+        <a id="p1"  class="btn " id="a1" href="{% url 'viewprofile' user.id %}">
+
+
+
+              Logged in as {{user.username}}
+              </a> </li>
+
+              <h2 class="nav-item"><button type="button" class="btn btn-default" >  </h2>
+          <li class="nav-item"> <form action="{% url 'logoutuser' %}" method="POST">
+
+              {% csrf_token %}
+              <button  id="p3" class="btn btn-danger" type="submit">LOGOUT</button>
+
+            </form></li>
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+{% else %}
+<!--
+<div>
+<nav class="navbar navbar-dark bg-dark">
+
+<ul class="nav justify-content-end">
+       <li class="nav-item">
+      <a   class="btn btn-info" class="nav-link active" href="{% url 'signupuser' %}">SignUp</a>
+      </li>
+      <h2 class="nav-item">
+            <a class="nav-link" href="">    </a>
+       </h2>
+       <li class="nav-item">
+      <a    class="btn btn-info" class="nav-link active" href="{% url 'loginuser' %}">Login</a>
+      </li>
+</ul>
+</nav>
+</div>
+-->
+{% endif %}
+
+
+
+
+
+    <!--end -->
+    <div class="container-fluid">
+   {% block content %} {% endblock %}
+ </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
